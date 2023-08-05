@@ -1,11 +1,14 @@
 package by.mysecurityspringgit.controllers;
 
 import by.mysecurityspringgit.entities.Product;
+import by.mysecurityspringgit.security.UsersDetails;
 import by.mysecurityspringgit.services.ProductsService;
 import by.mysecurityspringgit.repositories.specifications.ProductSpecs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -128,4 +131,5 @@ public class ProductsController {
         model.addAttribute("product", product) ;
         return "product-page";
     }
+
 }
