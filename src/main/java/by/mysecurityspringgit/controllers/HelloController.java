@@ -5,15 +5,25 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-//@RequestMapping("/")
+@RequestMapping("/")
 public class HelloController {
 
+    @GetMapping("/index")
+    public String viewIndex(){
+        return  "index";
+    }
     @GetMapping("/hello")
     public String sayHello(){
         return  "hello";
     }
+
+    /*@GetMapping("/login")
+    public String viewLoginPage(){
+        return  "login";
+    }*/
 
     @GetMapping("/userInfo")
     public String showUserInfo() {
